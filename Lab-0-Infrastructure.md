@@ -199,18 +199,7 @@ vagrant destroy -f          # Force sans confirmation
 
 ## ✅ Exercices Pratiques
 
-### Exercice 1 : Vérifier la Connectivité
-
-```bash
-# Se connecter à chaque machine et vérifier
-for machine in master app1 app2 db; do
-  echo "=== Vérification de $machine ==="
-  vagrant ssh $machine -c "hostname && ip addr show"
-  echo ""
-done
-```
-
-### Exercice 2 : Configurer les Résolutions de Noms
+### Exercice 1 : Configurer les Résolutions de Noms
 
 Sur votre machine hôte, ajouter les entrées dans `/etc/hosts` (Linux/Mac):
 
@@ -221,7 +210,7 @@ Sur votre machine hôte, ajouter les entrées dans `/etc/hosts` (Linux/Mac):
 192.168.60.6  db 
 ```
 
-### Exercice 3 : Tester la Connectivité Réseau
+### Exercice 2 : Tester la Connectivité Réseau
 
 ```bash
 # Depuis la machine master
@@ -243,16 +232,6 @@ vagrant ssh master -c "
 
 # Vérifier l'installation
 VBoxManage list extpacks
-```
-
-### Problème : Vagrant n'arrive pas à télécharger la box
-
-```bash
-# Essayer une autre source
-vagrant box add centos/7 --provider virtualbox
-
-# Ou ajouter manuellement une box
-vagrant box add centos/7 ~/Downloads/ubuntu/jammy64.box
 ```
 
 ### Problème : Les machines n'ont pas d'accès réseau
